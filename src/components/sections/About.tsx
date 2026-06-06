@@ -10,7 +10,7 @@ const journey = [
   {
     icon: Code2,
     title: "Frontend Engineering",
-    text: "3+ years architecting scalable Angular & TypeScript applications with reusable component systems.",
+    text: "3.3+ years architecting scalable Angular & TypeScript applications with reusable component systems.",
   },
   {
     icon: Smartphone,

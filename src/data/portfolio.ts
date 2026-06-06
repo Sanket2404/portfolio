@@ -7,15 +7,18 @@ import {
   SiCss,
   SiSass,
   SiTailwindcss,
+  SiBootstrap,
+  SiMaterialdesign,
   SiIonic,
   SiCapacitor,
   SiNodedotjs,
   SiExpress,
+  SiMongodb,
   SiGit,
   SiGithub,
   SiPostman,
   SiFigma,
-  SiJira,
+  SiTrello,
   SiRedux,
   SiReactivex,
   SiGitlab,
@@ -40,6 +43,12 @@ export const profile = {
   availability: "Open to remote & full-time roles",
   available: true,
   resumeUrl: "/Sanket_Jain_Resume.pdf",
+  // Web3Forms access key — PUBLIC by design (safe to commit). Get a free key at
+  // https://web3forms.com (enter sanketjain242000@gmail.com). Until it's set to a
+  // real key, the contact form falls back to opening the visitor's email client.
+  contactFormKey:
+    (import.meta.env.VITE_WEB3FORMS_KEY as string | undefined) ||
+    "YOUR_WEB3FORMS_ACCESS_KEY",
   // Roles cycled through the hero typing effect
   typingRoles: [
     "Angular Specialist",
@@ -48,10 +57,13 @@ export const profile = {
     "TypeScript Craftsman",
     "Performance-focused UI Engineer",
   ],
-  intro:
-    "Frontend Developer with 3.3+ years building scalable enterprise web and mobile applications with Angular, TypeScript, Ionic and modern frontend engineering. I specialize in SSR, performance optimization, reusable component architecture and shipping production-grade experiences for Android, iOS and the web.",
+  intro: [
+    "Frontend Developer with 3.3+ years of experience building scalable enterprise web and mobile applications using Angular, TypeScript, Ionic, and modern frontend engineering practices. Specialized in Angular application development, SSR, frontend performance optimization, reusable component architecture, state management, and responsive UI engineering.",
+    "Experienced in developing enterprise-scale ERP and workflow management systems with focus on frontend scalability, rendering optimization, modular architecture, and seamless user experience. Hands-on experience with PWAs, NgRx, REST API integration, CI/CD pipelines, and cross-platform mobile application deployment for Android and iOS.",
+    "Skilled in AI-assisted development workflows using Cursor AI, GitHub Copilot, and modern developer tools to improve development productivity, debugging efficiency, code quality, and rapid feature delivery.",
+  ],
   bio: [
-    "I'm a frontend engineer who loves turning complex, data-heavy enterprise workflows into fast, intuitive interfaces. Over the last 3+ years at Rssquarz Tech Solutions I've led an Angular 10 → 17 migration with SSR, architected a 50+ module ERP platform, and shipped cross-platform mobile apps to the Play Store and App Store.",
+    "I'm a frontend engineer who loves turning complex, data-heavy enterprise workflows into fast, intuitive interfaces. Over the last 3+ years at Rssquarz Tech Solutions I've led an Angular 10 → 17 migration with SSR, architected a 20+ module ERP platform, and shipped cross-platform mobile apps to the Play Store and App Store.",
     "My focus is frontend scalability — reusable component architecture, NgRx state management, rendering optimization and Core Web Vitals. I work fluently with AI-assisted workflows (Cursor, Copilot, MCP) to ship faster without compromising code quality.",
   ],
   socials: {
@@ -73,9 +85,9 @@ export interface Stat {
 
 export const stats: Stat[] = [
   { value: 3.3, suffix: "+", label: "Years of Experience" },
-  { value: 8, suffix: "+", label: "Successful Deployments" },
-  { value: 4, suffix: "", label: "Mobile Apps Released" },
-  { value: 15, suffix: "+", label: "Projects Completed" },
+  { value: 6, suffix: "+", label: "Successful Deployments" },
+  { value: 3, suffix: "", label: "Mobile Apps Released" },
+  { value: 8, suffix: "+", label: "Projects Completed" },
 ];
 
 /* ------------------------------------------------------------------ */
@@ -110,6 +122,8 @@ export const skillCategories: SkillCategory[] = [
       { name: "CSS3", icon: SiCss, level: 93, color: "#1572b6" },
       { name: "SCSS", icon: SiSass, level: 90, color: "#cc6699" },
       { name: "Tailwind CSS", icon: SiTailwindcss, level: 88, color: "#38bdf8" },
+      { name: "Bootstrap", icon: SiBootstrap, level: 88, color: "#7952b3" },
+      { name: "Angular Material", icon: SiMaterialdesign, level: 90, color: "#4285f4" },
     ],
   },
   {
@@ -126,6 +140,7 @@ export const skillCategories: SkillCategory[] = [
     skills: [
       { name: "Node.js", icon: SiNodedotjs, level: 65, color: "#5fa04e" },
       { name: "Express.js", icon: SiExpress, level: 62, color: "#ffffff" },
+      { name: "MongoDB", icon: SiMongodb, level: 62, color: "#47a248" },
       { name: "AWS (S3, IAM)", icon: FaAws, level: 60, color: "#ff9900" },
     ],
   },
@@ -140,7 +155,7 @@ export const skillCategories: SkillCategory[] = [
       { name: "VS Code", icon: VscVscode, level: 95, color: "#007acc" },
       { name: "Postman", icon: SiPostman, level: 85, color: "#ff6c37" },
       { name: "Figma", icon: SiFigma, level: 78, color: "#f24e1e" },
-      { name: "Jira", icon: SiJira, level: 80, color: "#0052cc" },
+      { name: "Trello", icon: SiTrello, level: 82, color: "#0079bf" },
     ],
   },
 ];
@@ -221,11 +236,11 @@ export const projects: Project[] = [
   {
     name: "Richa Graphics",
     category: "Enterprise Workflow Platform · Angular + Ionic",
-    tagline: "A 50+ module ERP for end-to-end operations.",
+    tagline: "A 20+ module ERP for end-to-end operations.",
     description:
       "Engineered and maintained a large-scale enterprise operations platform spanning Orders, Task Management, Installation, Delivery, Vendors, Inventory, CMS and Role Administration — with complex workflow orchestration and real-time status transitions.",
     features: [
-      "50+ interconnected, lazy-loaded feature modules",
+      "20+ interconnected, lazy-loaded feature modules",
       "Deeply nested reactive forms with role-driven UI access",
       "OnPush change detection, RxJS & response caching for scale",
       "Cross-platform Ionic field-installer mobile app",
@@ -286,6 +301,22 @@ export const projects: Project[] = [
     links: { github: "https://github.com/Sanket2404" },
   },
   {
+    name: "FoodJunction",
+    category: "Grocery & E-commerce App · Android & iOS",
+    tagline: "Groceries & premium products, delivered.",
+    description:
+      "A cross-platform e-commerce mobile app for FoodJunction — selling groceries and premium products — originally built by my org with Ionic & Cordova for Android and iOS. I led a full UI revamp and a deep performance optimization pass to make the app faster and smoother.",
+    features: [
+      "End-to-end UI redesign for a cleaner, modern feel",
+      "Performance optimization — faster load & smoother scrolling",
+      "Cross-platform Android & iOS via Ionic + Cordova",
+      "Product catalog, cart & checkout flows",
+    ],
+    stack: ["Ionic", "Cordova", "Angular", "TypeScript", "REST APIs"],
+    accent: "linear-gradient(135deg,#22c55e,#f59e0b)",
+    links: {},
+  },
+  {
     name: "Freelance Web Applications",
     category: "Independent Client Work",
     tagline: "Responsive marketing & business sites.",
@@ -317,24 +348,17 @@ export interface Testimonial {
 export const testimonials: Testimonial[] = [
   {
     quote:
-      "Sanket consistently delivers clean, scalable frontend architecture. His Angular 17 SSR migration measurably improved our performance and SEO.",
-    name: "Your Name Here",
-    role: "Engineering Lead",
-    company: "Add a testimonial",
-  },
-  {
-    quote:
-      "A reliable engineer who takes ownership end-to-end — from reusable component design to Play Store & App Store releases.",
-    name: "Your Name Here",
-    role: "Product Manager",
-    company: "Add a testimonial",
-  },
-  {
-    quote:
-      "Strong eye for detail and performance. Sanket turned a complex 50+ module ERP into something genuinely pleasant to use.",
-    name: "Your Name Here",
+      "Sanket consistently delivers clean, scalable frontend architecture. His Angular SSR work measurably improved our performance and SEO.",
+    name: "WebPay Services",
     role: "Client",
-    company: "Add a testimonial",
+    company: "Freelance Engagement",
+  },
+  {
+    quote:
+      "A reliable engineer who takes ownership end-to-end — from reusable component design to production deployment.",
+    name: "Prophunt LLP",
+    role: "Client",
+    company: "Freelance Engagement",
   },
 ];
 

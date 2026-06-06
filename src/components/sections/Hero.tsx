@@ -60,12 +60,14 @@ export function Hero() {
             <span className="ml-1 inline-block h-6 w-[2px] animate-pulse bg-accent-soft" />
           </motion.div>
 
-          <motion.p
+          <motion.div
             variants={item}
-            className="mt-6 max-w-xl text-base leading-relaxed text-zinc-400"
+            className="mt-6 max-w-xl space-y-3 text-sm leading-relaxed text-zinc-400 sm:text-base"
           >
-            {profile.intro}
-          </motion.p>
+            {profile.intro.map((para, i) => (
+              <p key={i}>{para}</p>
+            ))}
+          </motion.div>
 
           <motion.div variants={item} className="mt-8 flex flex-wrap items-center gap-4">
             <MagneticButton asChild size="lg" variant="primary">
