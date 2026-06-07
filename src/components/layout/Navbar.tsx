@@ -33,7 +33,7 @@ export function Navbar() {
     >
       <nav
         className={cn(
-          "flex w-full max-w-3xl items-center justify-between rounded-full px-4 py-2.5 transition-all duration-500",
+          "flex w-full max-w-4xl items-center justify-between rounded-full px-4 py-2.5 transition-all duration-500",
           scrolled
             ? "glass-strong shadow-[0_8px_40px_-12px_rgba(0,0,0,0.6)]"
             : "border border-transparent"
@@ -51,12 +51,12 @@ export function Navbar() {
         </a>
 
         {/* Desktop links */}
-        <ul className="hidden items-center gap-1 md:flex">
+        <ul className="hidden items-center gap-1 lg:flex">
           {navLinks.map((link) => (
             <li key={link.href}>
               <a
                 href={link.href}
-                className="rounded-full px-4 py-2 text-sm text-zinc-400 transition-colors hover:text-white"
+                className="block whitespace-nowrap rounded-full px-3 py-2 text-sm text-zinc-400 transition-colors hover:text-white"
               >
                 {link.label}
               </a>
@@ -80,7 +80,7 @@ export function Navbar() {
           <button
             type="button"
             onClick={() => setOpen((v) => !v)}
-            className="grid h-10 w-10 place-items-center rounded-full text-zinc-300 hover:bg-white/5 md:hidden"
+            className="grid h-10 w-10 place-items-center rounded-full text-zinc-300 hover:bg-white/5 lg:hidden"
             aria-label={open ? "Close menu" : "Open menu"}
             aria-expanded={open}
           >
@@ -96,7 +96,7 @@ export function Navbar() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 top-0 z-40 flex flex-col bg-ink/95 px-6 pt-28 backdrop-blur-xl md:hidden"
+            className="fixed inset-0 top-0 z-40 flex flex-col bg-ink/95 px-6 pt-28 backdrop-blur-xl lg:hidden"
           >
             <ul className="flex flex-col gap-2">
               {navLinks.map((link, i) => (
