@@ -335,6 +335,46 @@ export const projects: Project[] = [
 ];
 
 /* ------------------------------------------------------------------ */
+/* Open Source                                                        */
+/* ------------------------------------------------------------------ */
+
+export const openSource = {
+  name: "ng-bharat-validators",
+  tagline: "Angular reactive-form validators for Indian formats.",
+  description:
+    "An open-source npm package that provides ready-to-use reactive-form validators for Indian formats — PAN, Aadhaar, GSTIN, IFSC, Pincode, Mobile, UPI and more. A framework-agnostic core means it also works in React, Vue and Node.js.",
+  version: "1.0.2",
+  license: "MIT",
+  language: "TypeScript",
+  install: "npm i ng-bharat-validators",
+  validators: [
+    "PAN",
+    "Aadhaar",
+    "GSTIN",
+    "IFSC",
+    "Pincode",
+    "Mobile",
+    "UPI",
+    "Vehicle No.",
+    "Voter ID",
+    "Passport",
+    "Driving Licence",
+  ],
+  frameworks: ["Angular", "React", "Vue", "Node.js"],
+  code: `import { BharatValidators } from 'ng-bharat-validators';
+
+this.form = this.fb.group({
+  pan:     ['', [BharatValidators.pan()]],
+  aadhaar: ['', [BharatValidators.aadhaar()]],
+  gstin:   ['', [BharatValidators.gstin()]],
+});`,
+  links: {
+    npm: "https://www.npmjs.com/package/ng-bharat-validators",
+    github: "https://github.com/Sanket2404/ng-bharat-validators",
+  },
+};
+
+/* ------------------------------------------------------------------ */
 /* Testimonials (placeholder structure for future use)               */
 /* ------------------------------------------------------------------ */
 
@@ -371,5 +411,6 @@ export const navLinks = [
   { label: "Skills", href: "#skills" },
   { label: "Experience", href: "#experience" },
   { label: "Projects", href: "#projects" },
+  { label: "Open Source", href: "#open-source" },
   { label: "Contact", href: "#contact" },
 ];

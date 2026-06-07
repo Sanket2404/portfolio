@@ -21,6 +21,11 @@ const Experience = lazy(() =>
 const Projects = lazy(() =>
   import("@/components/sections/Projects").then((m) => ({ default: m.Projects }))
 );
+const OpenSource = lazy(() =>
+  import("@/components/sections/OpenSource").then((m) => ({
+    default: m.OpenSource,
+  }))
+);
 const Achievements = lazy(() =>
   import("@/components/sections/Achievements").then((m) => ({
     default: m.Achievements,
@@ -76,6 +81,7 @@ export default function App() {
           <Skills />
           <Experience />
           <Projects />
+          <OpenSource />
           <Achievements />
           <Testimonials />
           <Contact />
